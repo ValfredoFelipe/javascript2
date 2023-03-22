@@ -99,7 +99,7 @@ h1{
     display: none;
 }
 
-.container-password-hide:hover .tooltip{
+.container-password:hover .tooltip{
     visibility: visible;
     bottom: 50px;
     opacity: 1;
