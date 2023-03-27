@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    
+    
+</head>
+<body>
+        
+        <header id="header">
+
+            <div id="principal" class="principal">
+                <h1>Lista de tarefas</h1>
+                <form action="tarefas" method="post" autocomplete="off">
+                    <p>Insira suas tarefas abaixo:</p>
+                    <input type="text" id="tarefaprincipal" class="tarefaprincipal">
+                
+                    <button type="button" id="botao" class="botao">Inserir</button>
+                    <button type="button" id="bexcluir1" class="bexcluir1">Excluir</button>
+                </form>
+            </div>
+            <div id="secundaria" class="secundaria hide">
+                <form action="tarefas" method="post" autocomplete="off">
+                    <p>Tarefas inseridas:</p>
+                    <label for="tarefas2"></label>
+                    <input type="text" id="tarefasecundaria" class="tarefasecundaria">
+                
+                    <button type="button" id="bincluir" class="bincluir">Incluir</button>
+                    <button type="button" id="bexcluir" class="bexcluir">Excluir</button>
+                </form>
+            </div>
+            
+           <div id="resultado">
+           
+           </div>
+        
+        </header>
+        
+
+
+    <script src="script.js"></script>
+</body>
+</html>
