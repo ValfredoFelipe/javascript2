@@ -29,14 +29,16 @@ let inserir = document.querySelector('#botao')
          excluir.addEventListener("click", function (){
             
          
-            removetask(this)
+            //removetask(this)
+            //function removetask(task){
+               this.parentNode.remove(true)
+            //}
+              
    
    
    
          })
-         function removetask(task){
-         task.parentNode.remove(true)
-        }
+        
 
 
       

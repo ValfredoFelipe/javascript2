@@ -125,3 +125,196 @@ body.replaceChild(el, title)
   p.removeAttribute('class')
   -------------------------------------------------*/
 
+ /* let numeros = [1,2,3,4]
+  let total = numeros.reduce(function(valorAcumulado, numeroAtual){
+
+  return valorAcumulado + numeroAtual
+
+  },0)
+  console.log(total)
+  -----------------------------------------------------------*/
+
+  /*let numeros = [20, 70 , 35]
+  let maiorValor = numeros.reduce(function(valorAcumulado, valorAtual){
+    return Math.max(valorAcumulado, valorAtual)
+  },0)
+console.log(maiorValor)
+-----------------------------------------------------*/
+/*arrow function exemplo
+let soma2 = (a,b) => a+b
+console.log(soma2(2,4))
+-----------------------------------------------------*/
+/*let numeros = [4, 12, 45, 67, 83]
+
+let numerosFiltrados = numeros.filter((valorAtual) =>{
+    if(valorAtual >=10){
+        return valorAtual
+    }
+})
+console.log(numerosFiltrados)
+---------------------------------------------------*/
+/*let numeros = [1,3,5]
+let numerosCalculados = numeros.map((valorAtual, indice, array) =>{
+    return valorAtual*3
+})
+console.log(numerosCalculados)
+---------------------------------------------------------*/
+
+/*const myPromise = new Promise((resolve, reject) =>{
+    const nome = 'felipe'
+
+    if(nome ==='felipe'){
+        resolve('Usuário encontrado')
+    } else{
+        reject('Usuário não encontrado')
+    }
+})
+myPromise.then((data) =>{
+    console.log(data)
+})------------------------------------*/
+/*const myPromise2 = new Promise((resolve, reject) =>{
+    const nome = 'felipe'
+
+    if(nome ==='felipe'){
+        resolve('Usuário encontrado')
+    } else{
+        reject('Usuário não encontrado')
+    }
+})
+myPromise2
+.then((data) =>{
+    return data.toLowerCase()
+})
+.then((stringmodificada) =>{
+    console.log(stringmodificada)
+}) ------------------------------------- */
+/*const myPromise2 = new Promise((resolve, reject) =>{
+    const nome = 'João'
+
+    if(nome ==='felipe'){
+        resolve('Usuário encontrado')
+    } else{
+        reject('Usuário não encontrado')
+    }
+})
+myPromise2
+.then((data) =>{
+    console.log(data)
+})
+.catch((err) => {
+    console.log('Aconteceu um erro: ' + err)
+})---------------------------------*/
+/*const p1 = new Promise((resolve, reject) =>{
+    setTimeout(() =>{
+        resolve('P1 ok! Timeout')
+    },2000)
+})
+const p2 = new Promise((resolve, reject) =>{
+   
+        resolve('P2')
+    
+})
+const p3 = new Promise((resolve, reject) =>{
+   
+    resolve('P3')
+
+})
+const resolveAll = Promise.all([p1,p2,p3]).then((data) => {
+    console.log(data)
+})-----------------------------------*/ 
+/*const p1 = new Promise((resolve, reject) =>{
+    setTimeout(() =>{
+        resolve('P1 ok! Timeout')
+    },2000)
+})
+const p2 = new Promise((resolve, reject) =>{
+   
+        resolve('P2')
+    
+})
+const p3 = new Promise((resolve, reject) =>{
+   
+    resolve('P3')
+
+})
+const resolveAll = Promise.race([p1,p2,p3]).then((data) => {
+    console.log(data)
+})-----------------------------------*/
+/*function primeiraFuncao(){
+    return new Promise((resolve) =>{
+        setTimeout(() =>{
+            console.log('Esperou isso aqui!')
+         resolve()   
+        },3000)
+    })
+}
+async function segundaFuncao(){
+    console.log('Iniciou')
+    await primeiraFuncao()
+    console.log('Terminou')
+}
+segundaFuncao()
+-------------------------------*/
+/*function bestRockBand(band) {
+    return new Promise ((resolve, reject)=>{
+        if(band =='Queen'){
+            resolve({
+                success: true,
+                bandName: band,
+                msg: band +'is the baest band ever'
+            })
+        } else{
+            reject({
+                success: false,
+                msg: 'Iam not so sure!'
+            })
+        }
+
+    })
+}
+
+function bestRockSong(response){
+    return new Promise((resolve, reject) => {
+        if(response.success){
+            resolve('Love of my life by' + response.bandName) } else{
+                reject('Do you know Queen?')
+            }
+        })
+    }*/   
+/*bestRockBand('Queen')
+.then(response => {
+console.log('Checking the answer...')
+return bestRockSong(response)
+})
+.then(response =>{
+console.log('Finding the best song...')
+console.log(response)
+})
+.catch(err =>{
+    console.log(err.msg)
+})*/
+/*async function doTheJob(){
+    try{
+        const bestRockBandResponse = await bestRockBand('Queen')
+        console.log(bestRockBandResponse)
+        const bestRockSongResponse = await bestRockSong(bestRockBandResponse)
+        console.log(bestRockSongResponse)
+    } catch (err){
+        console.log(err.msg)
+    }
+}
+doTheJob()*/
+
+
+/*// This example takes 2 seconds to run
+const start = Date.now();
+
+console.log('starting timer...');
+// Expected output: "starting timer..."
+
+setTimeout(() => {
+  const millis = Date.now();
+
+  console.log(`seconds elapsed = ${Math.floor(millis)}`);
+  // Expected output: "seconds elapsed = 2"
+}, 2000);*/

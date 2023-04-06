@@ -1,0 +1,91 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    box-sizing: border-box;
+    font-size: large;
+}
+
+
+.calcprincipal{
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+background-color: #eee;
+border: 3px solid #bbb;
+width: 230px;
+border-radius: 5px;
+}
+.calc{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    position: absolute;
+    left: -230px;
+    transition: all 0.2s
+}
+.calcexibir{
+    left:0px
+}
+.abacalc{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 50px;
+    background-color: lightgray;
+    border-radius: 0px 5 px 5px 0px;
+    border: 1px solid black;
+    cursor: pointer
+}
+
+.div_nome{
+display: flex;
+justify-content: center;
+align-items: center;
+width: 220px;
+}
+.div_display{
+display: flex;
+justify-content: center;
+align-items: center;
+width: 220px;
+
+}
+.display{
+    background-color: #8a8;
+    width: 220px;
+    text-align: right;
+    padding: 5px;
+
+
+
+}
+.div_teclas{
+display: flex;
+justify-content: center;
+align-items: center;
+width: 220px;
+flex-wrap: wrap;
+
+}
+.tecla{
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: aquamarine;
+border: 3px solid black;
+border-radius: 10px;
+font-weight: bold;
+width: 50px;
+height: 50px;
+cursor: pointer;
+margin: 1px ;
+}
+.teclaOp{
+    background-color: #f44 !important;
+    border-color: #800 !important;
+
+}
