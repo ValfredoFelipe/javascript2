@@ -116,10 +116,15 @@ let autcom = [autorc,texto]
 console.log(autcom)
 }
 teste(1,2)*/
-function setValue () {
+/*function setValue () {
     var nome = document.getElementById('inputNome').value;
     document.getElementById('textNome').value = nome;
-};
+};*/
+const idades = [ 15, 21, 42, 34]
+const maior = idades.filter((evt)=>{
+    return evt!=15
+})
+console.log(maior)
 
 
 
