@@ -120,11 +120,32 @@ teste(1,2)*/
     var nome = document.getElementById('inputNome').value;
     document.getElementById('textNome').value = nome;
 };*/
-const idades = [ 15, 21, 42, 34]
+/*const idades = [ 15, 21, 42, 34]
 const maior = idades.filter((evt)=>{
     return evt!=15
 })
-console.log(maior)
+console.log(maior)*/
+
+/*var x = 0
+
+var myTimer= setTimeout(()=>{
+    console.log('0 x é 0')
+},2000)
+
+x= 5
+if(x>0){
+    clearTimeout(myTimer)
+    console.log('O x passou de zero')
+}
+
+var myInterval = setInterval(()=>{
+    console.log('Impimindo interval')
+},1000)
+
+setTimeout(()=>{
+    console.log('Não precisa mais imprimir')
+    clearInterval(myInterval)
+},3000)*/
 
 
 
