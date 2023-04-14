@@ -148,7 +148,16 @@ setTimeout(()=>{
 },3000)*/
 
 
-
+/*  var produtos = [
+    {id: 1, nome: "Camiseta", categoria: "Vestuário"},
+    {id: 2, nome: "Sapato", categoria: "Calçados"},
+    {id: 3, nome: "Blusa", categoria: "Vestuário"},
+    {id: 4, nome: "Saia", categoria: "Vestuário"},
+    {id: 5, nome: "Chinelo", categoria: "Calçados"},
+ {id: 6, nome: "Tênis", categoria: "Calçados"} 
+]
+produtos = produtos.filter(produto => produto.categoria == "Vestuário");
+console.log(produtos);*/
 
     
 
