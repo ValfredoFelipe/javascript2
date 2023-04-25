@@ -1,15 +1,26 @@
+import { Cxmsg } from "./caixamsg.js"
+
 const config={
-    titulo:"teste",
-    texto:"CFB Cursos",
-    cor:"#48f"
+   
+cor:"#48f"
 
 }
 
-const cxmsg = new Cxmsg(config)
+Cxmsg.config (config)
 
 const btn_mostrarcxmsg=document.querySelector("#btn_mostrarcxmsg")
+const btn_mostrarcxmsg2=document.querySelector("#btn_mostrarcxmsg2")
+const btn_mostrarcxmsg3=document.querySelector("#btn_mostrarcxmsg3")
 
 btn_mostrarcxmsg.addEventListener("click",()=>{
 
-cxmsg.mostrar()
+Cxmsg.mostrar("teste1","teste111")  
+})
+btn_mostrarcxmsg2.addEventListener("click",()=>{
+
+Cxmsg.mostrar("teste2","teste222")  
+})
+btn_mostrarcxmsg3.addEventListener("click",()=>{
+
+Cxmsg.mostrar("teste3","teste")  
 })
