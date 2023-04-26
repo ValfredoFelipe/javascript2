@@ -1,11 +1,14 @@
 
 class login{
-
+    static mat=null
+    static pas=null
     static logado=false
     static matlogado=null
     static nomelogado=null
     static acessologado=null
     static estilocss=null
+    static callback_ok=null
+    static callback_naook=null
     static config={
     cor:"lightblue"
     }
@@ -14,13 +17,13 @@ class login{
     //https://loginv1.cfbcursos.repl.co/?matricula=123&senha=321
     
 
-    static login=(config,mat,pas)=>{
+    static login=(callback_ok, callback_naook, config=null)=>{
         
             if(config!=null){
                 this.config=config
             }
-        this.endpoint+=`?matricula=${mat}&
-        senha=${pas}`
+        this.callback_ok=()=>{callback_ok()}
+        this.callback_naook=()=>{callback_naook()}
         this.estilocss=
         ".fundoLogin{display:flex; justify-content: flex-start;align-items: flex-start; flex-direction: column; width: 50%}"+
         ".baseLogin{{display:flex; justify-content: flex-start;align-items: stretch; flex-direction: column; width: 50%}"+
@@ -90,12 +93,20 @@ class login{
        const btn_login=document.createElement('button')
        btn_login.setAttribute('id','btn_login')
        btn_login.innerHTML='Login'
+       btn_login.addEventListener("click", (evt)=>{
+        this.verificarLogin()
+        
+       })
        elementosLogin.appendChild(btn_login)
 
        const btn_cancelar=document.createElement('button')
        btn_cancelar.setAttribute('id','btn_cancelar')
        btn_cancelar.innerHTML='Cancelar'
+       btn_cancelar.addEventListener("click",(evt)=>{
+        this.fechar()
+       })
        elementosLogin.appendChild(btn_cancelar)
+
 
 
 
@@ -136,40 +147,41 @@ class login{
 
 //        </div>
 
-//    </div>
-   
-       
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-       
-        // fetch(this.endpoint)
-        // .then(res=>res.json())
-        // .then(res=>{
-        //     if(res){
-        //         this.logado=true
-        //         this.matlogado=mat
-        //         this.nomelogado=res.nome
-        //         this.acessologado=res.acesso
-        //         console.log(res)
-        //     } else{
-        //         console.log("usuário não encontrado")
-        //     }
-        // })
+//    </div>  
 
     }
 
+    static verificarLogin=()=>{
+        const mat=document.querySelector("#f_userName").value
+        let pas=document.querySelector("#f_senha").value
+        
+        const endpoint =`https://loginv1.cfbcursos.repl.co/?matricula=${mat}&senha=${pas}`
+       fetch(endpoint)
+        .then(res=>res.json())
+        .then(res=>{
+              if(res){
+                this.logado=true
+                this.matlogado=mat
+                this.nomelogado=res.nome
+                this.acessologado=res.acesso
+                this.callback_ok()
+                this.fechar()
+            } else{
+                this.logado=false
+                this.matlogado=null
+                this.nomelogado=null
+                this.acessologado=null
+                this.callback_naook()
+                
+            }
+        })
+    }
+    static fechar=()=>{
+        const id_estiloLogin=document.querySelector("#id_estiloLogin")
+        id_estiloLogin.remove()
+        const fundoLogin=document.querySelector("#fundoLogin")
+        fundoLogin.remove()
+    }
 }
 
 export {login}
