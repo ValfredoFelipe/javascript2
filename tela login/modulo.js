@@ -15,5 +15,10 @@ const callback_naook=()=>{
     //this.titulo=titulo
     //this.texto=texto
 }
+const config ={
+    cor:null,
+    endpoint:"https://loginv1.cfbcursos.repl.co"
 
-login.login(callback_ok,callback_naook)
+}
+
+login.login(callback_ok,callback_naook,config)

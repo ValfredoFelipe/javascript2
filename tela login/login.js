@@ -10,14 +10,15 @@ class login{
     static callback_ok=null
     static callback_naook=null
     static config={
-    cor:"lightblue"
+    cor:null,
+    endpoint: null
     }
 
-    static endpoint="https://loginv1.cfbcursos.repl.co/";
+    // static endpoint="https://loginv1.cfbcursos.repl.co/";
     //https://loginv1.cfbcursos.repl.co/?matricula=123&senha=321
     
 
-    static login=(callback_ok, callback_naook, config=null)=>{
+    static login=(callback_ok, callback_naook, config)=>{
         
             if(config!=null){
                 this.config=config
@@ -155,22 +156,22 @@ class login{
         const mat=document.querySelector("#f_userName").value
         let pas=document.querySelector("#f_senha").value
         
-        const endpoint =`https://loginv1.cfbcursos.repl.co/?matricula=${mat}&senha=${pas}`
+        const endpoint =`${this.config.endpoint}/?matricula=${mat}&senha=${pas}`
        fetch(endpoint)
         .then(res=>res.json())
         .then(res=>{
               if(res){
-                this.logado=true
-                this.matlogado=mat
-                this.nomelogado=res.nome
-                this.acessologado=res.acesso
+                sessionStorage.setItem("logado","true")
+                sessionStorage.setItem("matlogado",mat)
+                sessionStorage.setItem("nomelogado",res.nome)
+                sessionStorage.setItem("acessologado",res.acesso)
                 this.callback_ok()
                 this.fechar()
             } else{
-                this.logado=false
-                this.matlogado=null
-                this.nomelogado=null
-                this.acessologado=null
+                sessionStorage.setItem("logado","false")
+                sessionStorage.setItem("matlogado","")
+                sessionStorage.setItem("nomelogado","")
+                sessionStorage.setItem("acessologado","")
                 this.callback_naook()
                 
             }
