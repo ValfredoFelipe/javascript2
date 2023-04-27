@@ -5,17 +5,17 @@ const btns = document.querySelectorAll('.btn')
 btns.forEach((btn)=> {
     
     btn.addEventListener("click",(e)=>{
-        console.log(e.currentTarget)
-        // const styles =e.currentTarget.classList
-        // if(styles.contains("diminuir")){
-        //     count--
-        //     value.textContent=count
-        // }else if(styles.contains("aumentar")){
-        //     count++
-        //     value.textContent=count
-        //  } else {
-        //     count=0
-        // value.textContent=0
-        // }
+        
+        const styles =e.currentTarget.classList
+        if(styles.contains("diminuir")){
+            count--
+            value.textContent=count
+        }else if(styles.contains("aumentar")){
+            count++
+            value.textContent=count
+         } else {
+            count=0
+        value.textContent=0
+        }
  })
 });
