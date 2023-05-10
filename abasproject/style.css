@@ -1,0 +1,9 @@
+.content{
+    display: none;
+}
+.tab-btn.active{
+    background: white;
+}
+.content.active{
+    display: block;
+}
