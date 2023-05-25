@@ -8,7 +8,40 @@
     <link rel="stylesheet"  type="text/css" href="style.css">
 </head>
 <body>
-    <h1>pesquisar</h1>
-    <script src="agendacfb.js" type="module"></script>
+    <div id="pesquisa" class="pesquisa">
+        <div class="campoPesq">
+        <label>ID</label>
+        <input type="radio" name="f_pesq" value="id">
+        </div>
+        <div class="campoPesq">
+            <label>Nome</label>
+            <input type="radio" name="f_pesq" value="nome" checked>
+        </div>
+        <div class="campoPesq">
+            <label>Data de nascimento</label>
+            <input type="radio" name="f_pesq" value="nasc" >
+        </div>
+        <div class="campoPesq">
+            <label>Email</label>
+            <input type="radio" name="f_pesq" value="email" >
+        </div>
+        <div class="campoPesq">
+            <label>Pesquisar</label>
+            <input type="text" name="f_txtpesq" id="f_textpesq">
+        </div>
+        <div class="campoPesq">
+            <button id="btn_pesq" class="btn_pesq btn_geral">Pequisar</button>
+        </div>
+
+
+    </div>
+
+    <div id="resultado">
+
+    </div>
+
+
+
+    <script src="pesquisar.js" type="module"></script>
 </body>
 </html>

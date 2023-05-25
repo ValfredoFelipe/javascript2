@@ -28,7 +28,11 @@ btn_gravar.addEventListener('click', (evt)=>{
         fetch(endpoint, cabecalho)
         .then(res=>{
             if(res.status==200){
-                console.log('ok')
+                f_nome.value=''
+                f_celular.value=''
+                f_email.value=''
+                f_dtnasc.value=''
+                f_nome.focus()
             } else{
                 alert('ERRO')
             }
@@ -37,4 +41,14 @@ btn_gravar.addEventListener('click', (evt)=>{
         
 })
 
+btn_cancelar.addEventListener('click', (evt)=>{
+reset()
+})
 
+const reset =()=>{
+    f_nome.value=''
+    f_celular.value=''
+    f_email.value=''
+    f_dtnasc.value=''
+    f_nome.focus()
+}
